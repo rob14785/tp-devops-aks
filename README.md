@@ -1,6 +1,6 @@
 # TP DevOps AKS 
   
-Description : à compléter 
+Description : API Flask de démonstration 
   
 ## Lancer l'application en local 
   
