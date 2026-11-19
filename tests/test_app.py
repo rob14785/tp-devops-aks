@@ -28,3 +28,9 @@ def test_health(client):
 
 def test_ready(client):
     assert client.get("/ready").status_code == 200
+
+
+def test_bissextile(client):
+    reponse = client.get("/bissextile/2024")
+    assert reponse.status_code == 200
+    assert reponse.get_json() == {"annee": 2024, "bissextile": True}

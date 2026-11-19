@@ -2,6 +2,7 @@
 import os
 import socket
 from flask import Flask, jsonify
+from calendrier import est_bissextile
 
 app = Flask(__name__)
 
@@ -25,6 +26,11 @@ def health():
 def ready():
     """Sonde de disponibilité (readiness)."""
     return jsonify(status="ready")
+
+
+@app.get("/bissextile/<int:annee>")
+def bissextile(annee):
+    return jsonify(annee=annee, bissextile=est_bissextile(annee))
 
 
 if __name__ == "__main__":
